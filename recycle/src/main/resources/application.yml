@@ -1,12 +1,13 @@
 spring:
   application:
     name: recycle
-  h2:
-    console:
-      path: /h2
-      enabled: true
   datasource:
-    url: jdbc:h2:mem:~/test
-    username: sa
-    password:
-    driverClassName: org.h2.Driver
+    url: jdbc:mysql://recycle.crwjs2gsf01q.us-east-1.rds.amazonaws.com:3306/recycle
+    username: admin
+    password: Password
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+server:
+  port: 8080

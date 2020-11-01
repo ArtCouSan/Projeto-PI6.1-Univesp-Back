@@ -21,6 +21,7 @@ public class SolicitacaoServiceImpl implements SolicitacaoService {
     public Optional<Solicitacao> save(SolicitacaoSaveDTO solicitacaoSaveDTO) {
 
         Solicitacao solicitacao = new Solicitacao();
+        solicitacao.setUserId(solicitacaoSaveDTO.getUserId());
         solicitacao.setTitulo(solicitacaoSaveDTO.getTitulo());
         solicitacao.setResponsavel(solicitacaoSaveDTO.getResponsavel());
         solicitacao.setPapelSelected(solicitacaoSaveDTO.getPapelSelected());
