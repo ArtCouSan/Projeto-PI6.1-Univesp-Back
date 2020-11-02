@@ -6,6 +6,7 @@ import br.com.recycle.endpoint.repository.SolicitacaoRepository;
 import br.com.recycle.endpoint.service.SolicitacaoService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -34,6 +35,13 @@ public class SolicitacaoServiceImpl implements SolicitacaoService {
         solicitacao.setEmail(solicitacaoSaveDTO.getEmail());
 
         return Optional.ofNullable(solicitacaoRepository.save(solicitacao));
+
+    }
+
+    @Override
+    public List<Solicitacao> listarSolicitacoes(String idUser) {
+
+        return solicitacaoRepository.findByUserId(idUser);
 
     }
 

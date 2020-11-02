@@ -22,7 +22,7 @@ public class Solicitacao implements Serializable {
     private Long id;
 
     @Column(name = "ID_USER", nullable = false)
-    private Long userId;
+    private String userId;
 
     @Column(name = "TITULO", nullable = false)
     private String titulo;
