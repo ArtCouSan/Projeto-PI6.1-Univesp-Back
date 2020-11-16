@@ -31,11 +31,62 @@ public class SolicitacaoController {
 
     }
 
+    @PutMapping(value = "/{id}/cancelar")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ResponseEntity<Solicitacao> cancelarSolicitacao(@PathVariable Long id){
+
+        Optional<Solicitacao> solicitacao = solicitacaoService.cancelarSolicitacao(id);
+
+        return new ResponseEntity<>(solicitacao.get(), HttpStatus.OK);
+
+    }
+
+    @PutMapping(value = "/{id}/ativar")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ResponseEntity<Solicitacao> ativarSolicitacao(@PathVariable Long id){
+
+        Optional<Solicitacao> solicitacao = solicitacaoService.ativarSolicitacao(id);
+
+        return new ResponseEntity<>(solicitacao.get(), HttpStatus.OK);
+
+    }
+
+    @PutMapping(value = "/{id}/em-andamento")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ResponseEntity<Solicitacao> emAndamentoSolicitacao(@PathVariable Long id){
+
+        Optional<Solicitacao> solicitacao = solicitacaoService.emAndamentoSolicitacao(id);
+
+        return new ResponseEntity<>(solicitacao.get(), HttpStatus.OK);
+
+    }
+
+
+    @GetMapping(value = "/{id}")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ResponseEntity<Optional<Solicitacao>> getSolicitacao(@PathVariable Long id){
+
+        Optional<Solicitacao> solicitacao = solicitacaoService.getSolicitacao(id);
+
+        return new ResponseEntity<>(solicitacao, HttpStatus.OK);
+
+    }
+
     @GetMapping(value = "/listar-solicitacoes/{idUser}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ResponseEntity<List<Solicitacao>> listarSolicitacoes(@PathVariable String idUser){
 
         List<Solicitacao> solicitacoes = solicitacaoService.listarSolicitacoes(idUser);
+
+        return new ResponseEntity<>(solicitacoes, HttpStatus.OK);
+
+    }
+
+    @GetMapping(value = "/encontrar-solicitacoes/{idUser}")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ResponseEntity<List<Solicitacao>> encontrarSolicitacoes(@PathVariable String idUser){
+
+        List<Solicitacao> solicitacoes = solicitacaoService.encontrarSolicitacoes(idUser);
 
         return new ResponseEntity<>(solicitacoes, HttpStatus.OK);
 

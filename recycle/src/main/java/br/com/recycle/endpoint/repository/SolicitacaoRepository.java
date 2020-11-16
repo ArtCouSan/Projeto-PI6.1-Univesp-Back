@@ -12,4 +12,6 @@ public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Long> 
 
     List<Solicitacao> findByUserId(String userId);
 
+    List<Solicitacao> findByStatusAndUserIdNot(String status, String userId);
+
 }

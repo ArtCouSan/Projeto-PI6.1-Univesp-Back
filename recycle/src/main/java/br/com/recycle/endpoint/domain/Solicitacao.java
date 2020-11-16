@@ -30,6 +30,9 @@ public class Solicitacao implements Serializable {
     @Column(name = "RESPONSAVEL", nullable = false)
     private String responsavel;
 
+    @Column(name = "STATUS", nullable = false)
+    private String status;
+
     @Column(name = "PAPEL_SELECIONADO", nullable = false)
     private Boolean papelSelected;
 

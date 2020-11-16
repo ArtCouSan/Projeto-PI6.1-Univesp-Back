@@ -12,4 +12,15 @@ public interface SolicitacaoService {
 
     List<Solicitacao> listarSolicitacoes(String idUser);
 
+    List<Solicitacao> encontrarSolicitacoes(String idUser);
+
+    Optional<Solicitacao> getSolicitacao(Long id);
+
+    Optional<Solicitacao> cancelarSolicitacao(Long id);
+
+    Optional<Solicitacao> ativarSolicitacao(Long id);
+
+    Optional<Solicitacao> emAndamentoSolicitacao(Long id);
+
+
 }
